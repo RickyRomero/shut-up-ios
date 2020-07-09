@@ -52,7 +52,7 @@ class BlocklistController: NSObject {
             self.whitelist.append(lowercaseDomain)
             self.whitelist.sort { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
             self.writeWhitelist()
-            return self.whitelist.index(of: lowercaseDomain)!
+            return self.whitelist.firstIndex(of: lowercaseDomain)!
         }
         else
         {
@@ -65,7 +65,7 @@ class BlocklistController: NSObject {
     {
         if (self.domainExistsInWhitelist(domain))
         {
-            self.whitelist.remove(at: self.whitelist.index(of: domain)!)
+            self.whitelist.remove(at: self.whitelist.firstIndex(of: domain)!)
             self.writeWhitelist()
             return true
         }
@@ -77,7 +77,7 @@ class BlocklistController: NSObject {
 
     func domainExistsInWhitelist(_ domain: String) -> Bool
     {
-        return (self.whitelist.index(of: domain) != nil)
+        return (self.whitelist.firstIndex(of: domain) != nil)
     }
 
     func readWhitelist()
