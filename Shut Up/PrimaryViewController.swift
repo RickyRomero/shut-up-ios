@@ -48,12 +48,6 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        // Clipboard listener
-        NotificationCenter.default.addObserver(self,
-                                                selector: #selector(PrimaryViewController.getClipboardString(_:)),
-                                                name: UIApplication.didBecomeActiveNotification,
-                                                object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -69,43 +63,6 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillDisappear(animated)
 
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
-    }
-
-    @objc func getClipboardString(_ notification: Notification)
-    {
-        let tutorialAcknowledged: Bool? = UserDefaults.standard.bool(forKey: "TutorialAcknowledged")
-        
-        if (tutorialAcknowledged!)
-        {
-            if let clipboardContents = UIPasteboard.general.string
-            {
-                var domainString = ""
-                if (detectDomainNameInFullURLString(clipboardContents) != "")
-                {
-                    domainString = detectDomainNameInFullURLString(clipboardContents)
-                }
-                
-                if (domainString != "" && !BlocklistController.sharedInstance.domainExistsInWhitelist(domainString))
-                {
-                    let alert = UIAlertController(title: "URL detected", message: "It looks like you have a URL on your clipboard. Do you want to allow comments on " + domainString + "?", preferredStyle: UIAlertController.Style.alert)
-                    
-                    alert.view.tintColor = AppUtilities.sharedInstance.mainTintColor
-                    let addAction = UIAlertAction(title: "Allow", style: UIAlertAction.Style.default) {
-                        (UIAlertAction) -> Void in
-                        
-                        self.addDomainToTable(domainString)
-                    }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (UIAlertAction) -> Void in }
-                    alert.addAction(cancelAction)
-                    alert.addAction(addAction)
-                    present(alert, animated: true) { () -> Void in }
-                }
-                else
-                {
-                    print("No URL detected.")
-                }
-            }
-        }
     }
 
     func addDomainToTable(_ domain: String)
