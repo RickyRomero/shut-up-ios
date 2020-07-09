@@ -10,7 +10,7 @@ DEPENDENCIES:
   - KeyboardAdjuster (< 4.1.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AlamofireNetworkActivityIndicator
     - KeyboardAdjuster
@@ -22,4 +22,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4f1d6a6dd001e9beda4eaef78f230ab7f95415e3
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3
