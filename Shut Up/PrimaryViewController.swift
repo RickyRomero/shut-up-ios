@@ -51,11 +51,31 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        let tutorialAcknowledged: Bool? = UserDefaults.standard.bool(forKey: "TutorialAcknowledged")
+        var osName = "iOS"
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            osName = "iPadOS"
+        }
 
-        if (!tutorialAcknowledged!)
-        {
-            self.performSegue(withIdentifier: "firstRunSafariSettings", sender: self)
+        if #available(iOS 14.0, *) {
+            if !AppUtilities.sharedInstance.betaAcknowledged {
+                let alert = UIAlertController(
+                    title: "Time traveling detected",
+                    message: "This version of \(osName) may not work perfectly with Shut Up. A future update to Shut Up will support \(osName) 14 following its final release this fall.\n\nIf you encounter bugs, you can email me at ricky.romero@gmail.com. Please also use the Feedback app to report bugs to Apple.",
+                    preferredStyle: .alert
+                )
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    AppUtilities.sharedInstance.betaAcknowledged.toggle()
+                    self.presentTutorialIfNecessary()
+                }
+                alert.addAction(okAction)
+                alert.view.tintColor = AppUtilities.sharedInstance.mainTintColor
+
+                present(alert, animated: true, completion: nil)
+            } else {
+                presentTutorialIfNecessary()
+            }
+        } else {
+            presentTutorialIfNecessary()
         }
     }
 
@@ -63,6 +83,22 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillDisappear(animated)
 
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    func presentTutorialIfNecessary() {
+        let tutorialAcknowledged: Bool? = UserDefaults.standard.bool(forKey: "TutorialAcknowledged")
+
+        if (!tutorialAcknowledged!)
+        {
+            var modalStyle = UIModalPresentationStyle.overFullScreen
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                modalStyle = .formSheet
+            }
+
+            let vc = storyboard?.instantiateViewController(withIdentifier: "SafariSettingsVc") as! SafariSettingsViewController
+            vc.modalPresentationStyle = modalStyle
+            present(vc, animated: true, completion: nil)
+        }
     }
 
     func addDomainToTable(_ domain: String)

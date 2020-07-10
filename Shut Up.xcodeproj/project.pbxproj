@@ -638,6 +638,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Shut Up/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.8;
 				OTHER_SWIFT_FLAGS = "-D DEBUG $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -660,6 +661,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Shut Up/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -680,6 +682,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Comment Blocker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup.blocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -701,6 +704,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Comment Blocker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup.blocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
