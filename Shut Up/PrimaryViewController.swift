@@ -266,6 +266,50 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
         return domain
     }
 
+    func handleQuickAction(_ type: String) {
+        func showError(title: String, message: String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+            let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+
+            alert.view.tintColor = AppUtilities.sharedInstance.mainTintColor
+            alert.addAction(okButton)
+            present(alert, animated: true) { () -> Void in }
+        }
+
+        switch type {
+            case "AddAction":
+                self.domainField.becomeFirstResponder()
+            case "PasteAction":
+                guard let clipboardContents = UIPasteboard.general.string else {
+                    showError(
+                        title: "Clipboard is empty",
+                        message: "Copy a link to your clipboard and try again."
+                    )
+                    return
+                }
+
+                let domainString = detectDomainNameInFullURLString(clipboardContents)
+                guard !domainString.isEmpty else {
+                    showError(
+                        title: "URL not detected",
+                        message: "Copy a link to your clipboard and try again."
+                    )
+                    return
+                }
+
+                guard !BlocklistController.sharedInstance.domainExistsInWhitelist(domainString) else {
+                    showError(
+                        title: "URL already whitelisted",
+                        message: "\(domainString) is already set to show comments."
+                    )
+                    return
+                }
+                
+                self.addDomainToTable(domainString)
+            default: break
+        }
+    }
+
     @IBAction func userDidDismissKeyboard(_ sender: UISwipeGestureRecognizer) {
         self.currentResponder?.resignFirstResponder()
     }
