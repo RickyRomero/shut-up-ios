@@ -24,6 +24,25 @@
 	<string>public.app-category.social-networking</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAdd</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Add Site</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>AddAction</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>paste-quick-action</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Paste Site</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>PasteAction</string>
+		</dict>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
