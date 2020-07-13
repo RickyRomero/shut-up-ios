@@ -255,7 +255,6 @@
 				11E2CD611B40E20300ECC18A /* Sources */,
 				11E2CD621B40E20300ECC18A /* Frameworks */,
 				11E2CD631B40E20300ECC18A /* Resources */,
-				EC5217FB1C7B8B1800DBC5D5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -437,19 +436,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shut Up/Pods-Shut Up-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		EC5217FB1C7B8B1800DBC5D5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PROJECT_DIR}/Tools/bump-build-number.sh\" \"${PROJECT_DIR}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -634,11 +620,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Shut Up/Shut Up.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 728;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Shut Up/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.9;
 				OTHER_SWIFT_FLAGS = "-D DEBUG $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -657,11 +644,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Shut Up/Shut Up.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 728;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Shut Up/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -678,11 +666,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Comment Blocker/Comment Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 728;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Comment Blocker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup.blocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -700,11 +689,12 @@
 				CODE_SIGN_ENTITLEMENTS = "Comment Blocker/Comment Blocker.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 728;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Comment Blocker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 1.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rickyromero.shutup.blocker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
