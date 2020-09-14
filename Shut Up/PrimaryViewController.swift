@@ -56,11 +56,11 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
             osName = "iPadOS"
         }
 
-        if #available(iOS 14.0, *) {
+        if #available(iOS 15.0, *) {
             if !AppUtilities.sharedInstance.betaAcknowledged {
                 let alert = UIAlertController(
                     title: "Time traveling detected",
-                    message: "This version of \(osName) may not work perfectly with Shut Up. A future update to Shut Up will support \(osName) 14 following its final release this fall.\n\nIf you encounter bugs, you can email me at ricky.romero@gmail.com. Please also use the Feedback app to report bugs to Apple.",
+                    message: "This version of \(osName) may not work perfectly with Shut Up. A future update to Shut Up will support \(osName) 15 following its final release later this year.\n\nIf you encounter bugs, you can email me at ricky.romero@gmail.com. Please also use the Feedback app to report bugs to Apple.",
                     preferredStyle: .alert
                 )
                 let okAction = UIAlertAction(title: "OK", style: .default) { _ in
@@ -313,15 +313,4 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func userDidDismissKeyboard(_ sender: UISwipeGestureRecognizer) {
         self.currentResponder?.resignFirstResponder()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
