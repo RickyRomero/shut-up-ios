@@ -1,25 +1,16 @@
 PODS:
-  - Alamofire (4.7.3)
-  - AlamofireNetworkActivityIndicator (2.3.0):
-    - Alamofire (~> 4.7)
   - KeyboardAdjuster (4.0.0)
 
 DEPENDENCIES:
-  - Alamofire (< 4.8.0)
-  - AlamofireNetworkActivityIndicator (< 2.4.0)
   - KeyboardAdjuster (< 4.1.0)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - AlamofireNetworkActivityIndicator
     - KeyboardAdjuster
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  AlamofireNetworkActivityIndicator: 18346ff6d770d9513d0ac6f2d99706f40f93dbaa
   KeyboardAdjuster: 50eec4e8d52fd5d7f5df74fc07193cdadcc88abb
 
-PODFILE CHECKSUM: 4f1d6a6dd001e9beda4eaef78f230ab7f95415e3
+PODFILE CHECKSUM: d5864519b5b8e28c08672568e1452ff55d0ade4a
 
 COCOAPODS: 1.9.3

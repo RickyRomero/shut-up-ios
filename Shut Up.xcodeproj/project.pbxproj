@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0EA85F0AFA4642A8373A0C7B /* Pods_Shut_Up.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC76A7A6F82A1741323495D /* Pods_Shut_Up.framework */; };
 		1101329C1B5B238000164B88 /* WhitelistAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1101329B1B5B238000164B88 /* WhitelistAddView.swift */; };
 		113279961BA55154009460C5 /* Acknowledgments.txt in Resources */ = {isa = PBXBuildFile; fileRef = 113279951BA55154009460C5 /* Acknowledgments.txt */; };
 		113279981BA55CF4009460C5 /* DomainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113279971BA55CF4009460C5 /* DomainTableViewCell.swift */; };
@@ -14,6 +15,7 @@
 		115B97411B5231EB0010550F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B97401B5231EB0010550F /* AboutViewController.swift */; };
 		115B97431B5232070010550F /* OSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B97421B5232070010550F /* OSSViewController.swift */; };
 		115B97451B5361A60010550F /* PrimaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115B97441B5361A60010550F /* PrimaryViewController.swift */; };
+		116C8EDFD2702221E7748B4B /* Pods_Comment_Blocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0385D104CD248A8E61B57DA /* Pods_Comment_Blocker.framework */; };
 		11A916CC1BA78BD200BDC21F /* SafariSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A916CB1BA78BD200BDC21F /* SafariSettingsViewController.swift */; };
 		11E2CD471B3FBA1B00ECC18A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E2CD461B3FBA1B00ECC18A /* AppDelegate.swift */; };
 		11E2CD4C1B3FBA1B00ECC18A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11E2CD4A1B3FBA1B00ECC18A /* Main.storyboard */; };
@@ -27,8 +29,6 @@
 		11E2CD6E1B40E20300ECC18A /* Comment Blocker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 11E2CD651B40E20300ECC18A /* Comment Blocker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		11E2CD8B1B40E3F200ECC18A /* ActionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E2CD8A1B40E3F200ECC18A /* ActionRequestHandler.swift */; };
 		11E2CD8D1B40E3F200ECC18A /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 11E2CD8C1B40E3F200ECC18A /* Action.js */; };
-		1D2E4CB419E48D22A4306B63 /* Pods_Shut_Up.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619ED6A32A954BA98FB01E2A /* Pods_Shut_Up.framework */; };
-		45B045AB1815AE90D675C391 /* Pods_Comment_Blocker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2730DA22A645A73EEEA08E00 /* Pods_Comment_Blocker.framework */; };
 		EC101AE11B44483400DFE185 /* FileHash in Resources */ = {isa = PBXBuildFile; fileRef = EC101AE01B44483400DFE185 /* FileHash */; };
 		ECB245481B5036F300B50BBC /* BlocklistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB245471B5036F300B50BBC /* BlocklistController.swift */; };
 /* End PBXBuildFile section */
@@ -84,17 +84,16 @@
 		11E2CD8A1B40E3F200ECC18A /* ActionRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRequestHandler.swift; sourceTree = "<group>"; };
 		11E2CD8C1B40E3F200ECC18A /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		11E2CD8E1B40E3F200ECC18A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		257D9829461CA7BF797250DF /* Pods-Comment Blocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comment Blocker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Comment Blocker/Pods-Comment Blocker.release.xcconfig"; sourceTree = "<group>"; };
-		2730DA22A645A73EEEA08E00 /* Pods_Comment_Blocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comment_Blocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E17751355A2C5515F6FDAB1 /* Pods-Shut Up.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shut Up.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shut Up/Pods-Shut Up.debug.xcconfig"; sourceTree = "<group>"; };
-		619ED6A32A954BA98FB01E2A /* Pods_Shut_Up.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shut_Up.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		646F1D1D73E85EC34CA7E503 /* Pods-Shut Up.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shut Up.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shut Up/Pods-Shut Up.release.xcconfig"; sourceTree = "<group>"; };
-		83AE3EA63358B6A9C78E59E5 /* libPods-Action Button.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Action Button.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F73D4428984A21D38C61E70 /* Pods-Comment Blocker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comment Blocker.release.xcconfig"; path = "Target Support Files/Pods-Comment Blocker/Pods-Comment Blocker.release.xcconfig"; sourceTree = "<group>"; };
+		B0385D104CD248A8E61B57DA /* Pods_Comment_Blocker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comment_Blocker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EE8183A6B2E6B6758F58FC /* Pods-Shut Up.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shut Up.release.xcconfig"; path = "Target Support Files/Pods-Shut Up/Pods-Shut Up.release.xcconfig"; sourceTree = "<group>"; };
+		D53B73767CAE1039221464B4 /* Pods-Comment Blocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comment Blocker.debug.xcconfig"; path = "Target Support Files/Pods-Comment Blocker/Pods-Comment Blocker.debug.xcconfig"; sourceTree = "<group>"; };
+		E855DACAB9269D3BE9F698CF /* Pods-Shut Up.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shut Up.debug.xcconfig"; path = "Target Support Files/Pods-Shut Up/Pods-Shut Up.debug.xcconfig"; sourceTree = "<group>"; };
+		EAC76A7A6F82A1741323495D /* Pods_Shut_Up.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shut_Up.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC101AE01B44483400DFE185 /* FileHash */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FileHash; path = Libraries/FileHash; sourceTree = "<group>"; };
 		ECB245471B5036F300B50BBC /* BlocklistController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocklistController.swift; sourceTree = "<group>"; };
 		ECB245491B50391C00B50BBC /* Shut Up.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Shut Up.entitlements"; sourceTree = "<group>"; };
 		ECB2454A1B504A3200B50BBC /* Comment Blocker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Comment Blocker.entitlements"; sourceTree = "<group>"; };
-		EE828C0F66A2AB3198496EFF /* Pods-Comment Blocker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comment Blocker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Comment Blocker/Pods-Comment Blocker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D2E4CB419E48D22A4306B63 /* Pods_Shut_Up.framework in Frameworks */,
+				0EA85F0AFA4642A8373A0C7B /* Pods_Shut_Up.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45B045AB1815AE90D675C391 /* Pods_Comment_Blocker.framework in Frameworks */,
+				116C8EDFD2702221E7748B4B /* Pods_Comment_Blocker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,7 +140,7 @@
 				11E2CD891B40E3F200ECC18A /* Action Button */,
 				11E2CD441B3FBA1B00ECC18A /* Products */,
 				E9E1D03DD28F34FD91022A89 /* Frameworks */,
-				CA3B9B89734992BC91CD5028 /* Pods */,
+				9548C4FE6B067F849A594C25 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,24 +200,24 @@
 			path = "Action Button";
 			sourceTree = "<group>";
 		};
-		CA3B9B89734992BC91CD5028 /* Pods */ = {
+		9548C4FE6B067F849A594C25 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EE828C0F66A2AB3198496EFF /* Pods-Comment Blocker.debug.xcconfig */,
-				257D9829461CA7BF797250DF /* Pods-Comment Blocker.release.xcconfig */,
-				5E17751355A2C5515F6FDAB1 /* Pods-Shut Up.debug.xcconfig */,
-				646F1D1D73E85EC34CA7E503 /* Pods-Shut Up.release.xcconfig */,
+				D53B73767CAE1039221464B4 /* Pods-Comment Blocker.debug.xcconfig */,
+				3F73D4428984A21D38C61E70 /* Pods-Comment Blocker.release.xcconfig */,
+				E855DACAB9269D3BE9F698CF /* Pods-Shut Up.debug.xcconfig */,
+				D0EE8183A6B2E6B6758F58FC /* Pods-Shut Up.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		E9E1D03DD28F34FD91022A89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				113ECB2A1BA7DC0D0019F3E5 /* HockeySDK.framework */,
-				83AE3EA63358B6A9C78E59E5 /* libPods-Action Button.a */,
-				619ED6A32A954BA98FB01E2A /* Pods_Shut_Up.framework */,
-				2730DA22A645A73EEEA08E00 /* Pods_Comment_Blocker.framework */,
+				B0385D104CD248A8E61B57DA /* Pods_Comment_Blocker.framework */,
+				EAC76A7A6F82A1741323495D /* Pods_Shut_Up.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,12 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11E2CD551B3FBA1B00ECC18A /* Build configuration list for PBXNativeTarget "Shut Up" */;
 			buildPhases = (
-				A3D605F71F04D557EF189071 /* [CP] Check Pods Manifest.lock */,
+				7DBCC1F21D8DDDFE00D6EC47 /* [CP] Check Pods Manifest.lock */,
 				11E2CD3F1B3FBA1B00ECC18A /* Sources */,
 				11E2CD401B3FBA1B00ECC18A /* Frameworks */,
 				11E2CD411B3FBA1B00ECC18A /* Resources */,
 				11E2CD721B40E20300ECC18A /* Embed App Extensions */,
-				DF3D82653BC880BC6933F3BB /* [CP] Embed Pods Frameworks */,
+				1322402F981CBA265DB41698 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,7 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11E2CD6F1B40E20300ECC18A /* Build configuration list for PBXNativeTarget "Comment Blocker" */;
 			buildPhases = (
-				7940D4BE62AA628D38DA32D7 /* [CP] Check Pods Manifest.lock */,
+				C656A4FE4AFCFDE759E7C9D0 /* [CP] Check Pods Manifest.lock */,
 				11E2CD611B40E20300ECC18A /* Sources */,
 				11E2CD621B40E20300ECC18A /* Frameworks */,
 				11E2CD631B40E20300ECC18A /* Resources */,
@@ -379,34 +378,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7940D4BE62AA628D38DA32D7 /* [CP] Check Pods Manifest.lock */ = {
+		1322402F981CBA265DB41698 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-Shut Up/Pods-Shut Up-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KeyboardAdjuster/KeyboardAdjuster.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Comment Blocker-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardAdjuster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shut Up/Pods-Shut Up-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A3D605F71F04D557EF189071 /* [CP] Check Pods Manifest.lock */ = {
+		7DBCC1F21D8DDDFE00D6EC47 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Shut Up-checkManifestLockResult.txt",
 			);
@@ -415,26 +418,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DF3D82653BC880BC6933F3BB /* [CP] Embed Pods Frameworks */ = {
+		C656A4FE4AFCFDE759E7C9D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Shut Up/Pods-Shut Up-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/KeyboardAdjuster/KeyboardAdjuster.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeyboardAdjuster.framework",
+				"$(DERIVED_FILE_DIR)/Pods-Comment Blocker-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Shut Up/Pods-Shut Up-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -613,7 +616,7 @@
 		};
 		11E2CD561B3FBA1B00ECC18A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E17751355A2C5515F6FDAB1 /* Pods-Shut Up.debug.xcconfig */;
+			baseConfigurationReference = E855DACAB9269D3BE9F698CF /* Pods-Shut Up.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -637,7 +640,7 @@
 		};
 		11E2CD571B3FBA1B00ECC18A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 646F1D1D73E85EC34CA7E503 /* Pods-Shut Up.release.xcconfig */;
+			baseConfigurationReference = D0EE8183A6B2E6B6758F58FC /* Pods-Shut Up.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -660,7 +663,7 @@
 		};
 		11E2CD701B40E20300ECC18A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE828C0F66A2AB3198496EFF /* Pods-Comment Blocker.debug.xcconfig */;
+			baseConfigurationReference = D53B73767CAE1039221464B4 /* Pods-Comment Blocker.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = "Comment Blocker/Comment Blocker.entitlements";
@@ -683,7 +686,7 @@
 		};
 		11E2CD711B40E20300ECC18A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 257D9829461CA7BF797250DF /* Pods-Comment Blocker.release.xcconfig */;
+			baseConfigurationReference = 3F73D4428984A21D38C61E70 /* Pods-Comment Blocker.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = "Comment Blocker/Comment Blocker.entitlements";
