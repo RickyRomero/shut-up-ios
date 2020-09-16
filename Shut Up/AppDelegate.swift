@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initialSetup()
 
-        NetworkActivityIndicatorManager.shared.isEnabled = true
         UIApplication.shared.setMinimumBackgroundFetchInterval(Double(60 * 60 * 24))
 
         quickAction = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem

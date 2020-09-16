@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import SafariServices
-import Alamofire
 
 extension AppDelegate {
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -25,151 +24,91 @@ extension AppDelegate {
 
 class StylesheetUpdate {
     var completionHandler: (UIBackgroundFetchResult) -> (Void)
-    var sessionManager: SessionManager?
 
     // @escaping (DataResponse<String>) -> Void
     init(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void, useEtag: Bool)
     {
+        print("Perform background refresh.")
         self.completionHandler = { completionHandler($0) }
 
-        print("Perform background refresh.")
-        
+        let sessionConfig = URLSessionConfiguration.ephemeral
         let version = UIApplication.versionBuild()
-        
         let userDefaults = UserDefaults.standard
         let ETag: String? = userDefaults.string(forKey: "ETag")
+        let stylesheetUrl = URL(string: "https://rickyromero.com/shutup/updates/shutup.css")!
+        var additionalHeaders = [
+            "User-Agent": "Shut Up Touch/\(version)",
+            "Accept-Encoding": ""
+        ]
         
-        var additionalHeaders = ["User-Agent": "Shut Up Touch/\(version)"]
-        
-        if (ETag != nil && ETag != "" && useEtag)
-        {
+        if ETag != nil && ETag != "" && useEtag {
             print("SENDING ETAG: \(ETag!)")
             additionalHeaders["If-None-Match"] = ETag!
-        }
-        else
-        {
+        } else {
             print("NO ETAG!!!")
         }
-        
-        additionalHeaders["Accept-Encoding"] = ""
-        
-        let sessionConfiguration = URLSessionConfiguration.background(withIdentifier: "com.rickyromero.shutup.stylesheet-update")
-        sessionConfiguration.requestCachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy
-        sessionConfiguration.isDiscretionary = true
-        sessionConfiguration.allowsCellularAccess = true
-        sessionConfiguration.httpMaximumConnectionsPerHost = 1
-        sessionConfiguration.httpAdditionalHeaders = additionalHeaders
 
-        sessionConfiguration.timeoutIntervalForRequest = 5.0
-        sessionConfiguration.timeoutIntervalForResource = 10.0
+        sessionConfig.timeoutIntervalForRequest = 5 // seconds
+        sessionConfig.timeoutIntervalForRequest = 10 // seconds
+        sessionConfig.allowsCellularAccess = true
+        sessionConfig.httpAdditionalHeaders = additionalHeaders
 
-        self.sessionManager = Alamofire.SessionManager(configuration: sessionConfiguration)
-        self.sessionManager?.request("https://rickyromero.com/shutup/updates/shutup.css").responseString(queue: nil, encoding: nil, completionHandler: self.finishAndStoreFetch)
+        let session = URLSession(configuration: sessionConfig)
+        let sessionTask = session.dataTask(with: stylesheetUrl, completionHandler: finishAndStoreFetch(data:response:error:))
+
+        sessionTask.resume()
 
         NSLog("Download begun.")
     }
 
-    func finishAndStoreFetch(response: DataResponse<String>)
-    {
-        print("SESSION / DOWNLOADTASK / DIDFINISHDOWNLOADINGTOURL")
-
-        var success = response.result.isSuccess
-        if (success == false)
-        {
+    func finishAndStoreFetch(data: Data?, response: URLResponse?, error: Error?) {
+        func failRequest() {
             print("Request failed.")
-            self.callback(UIBackgroundFetchResult.failed)
+            self.completionHandler(.failed)
+        }
+
+        print("SESSION / DOWNLOADTASK / DIDFINISHDOWNLOADINGTOURL")
+        guard error == nil else { return failRequest() }
+        guard let response = response as? HTTPURLResponse else { return failRequest() }
+        guard let data = data else { return failRequest() }
+
+        if response.statusCode == 304 {
+            print("RETURNING: NO DATA")
+            self.completionHandler(.noData)
             return
         }
 
-        let httpResponse = response.response!
+        guard response.statusCode == 200 else { return failRequest() }
+        guard !data.isEmpty else { return failRequest() }
+        guard response.mimeType == "text/css" else { return failRequest() }
+
         let userDefaults = UserDefaults.standard
-        let responseLength = (response.data?.count)!
 
-        // Account for header fields not being case-insensitive
-        var ETag = httpResponse.allHeaderFields["ETag"]
-        if (ETag == nil) { ETag = httpResponse.allHeaderFields["Etag"] }
-        if (ETag == nil) { ETag = httpResponse.allHeaderFields["etag"] }
-
-        print("Received \(String(describing: responseLength)) bytes.")
-
-        if ETag != nil
-        {
-            print(ETag!)
-            userDefaults.set(ETag!, forKey: "ETag")
-        }
-        else
-        {
+        if let etag = response.allHeaderFields["Etag"] as? String {
+            print(etag)
+            userDefaults.set(etag, forKey: "ETag")
+        } else {
             userDefaults.set("", forKey: "ETag")
         }
 
-        userDefaults.synchronize()
+        print("Received \(data.count) bytes.")
+        print("REQUEST OK")
+        print("-----------------------")
+        NSLog("%@", response.allHeaderFields)
+        print("-----------------------")
+        print(response.statusCode)
 
-        switch httpResponse.statusCode
-        {
-            case 200:
-                print("REQUEST OK")
-
-                print("-----------------------")
-                NSLog("%@", httpResponse.allHeaderFields)
-                print("-----------------------")
-                
-                if httpResponse.mimeType != "text/css"
-                {
-                    success = false
-                    print("ERROR: WRONG MIME TYPE")
-                }
-
-                if responseLength > 0
-                {
-                    print("Downloaded: \(String(describing: responseLength)).")
-                }
-                else
-                {
-                    success = false
-                    print("ERROR: NO BYTES RECEIVED")
-                }
-
-                print(httpResponse.statusCode)
-            case 304:
-                print("RETURNING: NO DATA")
-                self.callback(UIBackgroundFetchResult.noData)
-                return
-            default:
-                success = false
-                print("ERROR: BAD RESPONSE CODE")
+        if updateStoredCSSFile(data) {
+            print("RETURNING: NEW DATA")
+            self.completionHandler(.newData)
+        } else {
+            print("RETURNING: NO DATA")
+            self.completionHandler(.noData)
         }
-
-
-        if (success)
-        {
-            if updateStoredCSSFile(response.data!)
-            {
-                print("RETURNING: NEW DATA")
-
-                self.callback(UIBackgroundFetchResult.newData)
-            }
-            else
-            {
-                print("RETURNING: NO DATA")
-                self.callback(UIBackgroundFetchResult.noData)
-            }
-        }
-        else
-        {
-            print("RETURNING: FAILED")
-            self.callback(UIBackgroundFetchResult.failed)
-        }
-    }
-
-    func callback(_ result: UIBackgroundFetchResult)
-    {
-        self.completionHandler(result)
-        self.sessionManager!.session.finishTasksAndInvalidate()
     }
 
     // Returns a boolean describing whether an update has occurred.
-    func updateStoredCSSFile(_ data: Data) -> Bool
-    {
+    func updateStoredCSSFile(_ data: Data) -> Bool {
         let cachePath = AppUtilities.sharedInstance.cachePath()
         let cssPath = NSString(string: cachePath).appendingPathComponent("shutup.css")
 
