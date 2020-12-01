@@ -20,7 +20,7 @@ If you're simply looking to *install* Shut Up, these are the links you're lookin
 
 ## Minimum Requirements
 
-This version of Shut Up requires iOS/iPadOS 11 or later.
+This version of Shut Up requires iOS/iPadOS 12 or later.
 
 ## License
 
