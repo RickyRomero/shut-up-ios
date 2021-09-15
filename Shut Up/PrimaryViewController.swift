@@ -56,27 +56,7 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
             osName = "iPadOS"
         }
 
-        if #available(iOS 15.0, *) {
-            if !AppUtilities.sharedInstance.betaAcknowledged {
-                let alert = UIAlertController(
-                    title: "Time traveling detected",
-                    message: "This version of \(osName) may not work perfectly with Shut Up. A future update to Shut Up will support \(osName) 15 following its final release later this year.\n\nIf you encounter bugs, you can email me at ricky.romero@gmail.com. Please also use the Feedback app to report bugs to Apple.",
-                    preferredStyle: .alert
-                )
-                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                    AppUtilities.sharedInstance.betaAcknowledged.toggle()
-                    self.presentTutorialIfNecessary()
-                }
-                alert.addAction(okAction)
-                alert.view.tintColor = AppUtilities.sharedInstance.mainTintColor
-
-                present(alert, animated: true, completion: nil)
-            } else {
-                presentTutorialIfNecessary()
-            }
-        } else {
-            presentTutorialIfNecessary()
-        }
+        presentTutorialIfNecessary()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

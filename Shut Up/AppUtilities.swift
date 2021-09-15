@@ -14,7 +14,6 @@ class AppUtilities : NSObject {
     var error: Dictionary<String, String>
     var interfaceAvailable = false
     var mainTintColor = UIColor(red: 235 / 255, green: 0, blue: 66 / 255, alpha: 1.0)
-    var betaAcknowledged = false
 
     override init()
     {
