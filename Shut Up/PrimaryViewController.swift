@@ -51,11 +51,6 @@ class PrimaryViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        var osName = "iOS"
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            osName = "iPadOS"
-        }
-
         presentTutorialIfNecessary()
     }
 

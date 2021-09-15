@@ -12,6 +12,7 @@ import UIKit
 
 class SafariSettingsViewController: UIViewController {
 
+    @IBOutlet var step3Label: UILabel!
     @IBOutlet var doneButton: UIButton!
     @IBOutlet var largeGearView: UIImageView!
 
@@ -19,6 +20,8 @@ class SafariSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        initStep3Label()
 
         _ = Timer.scheduledTimer(timeInterval: 3.0,
             target: self,
@@ -77,6 +80,42 @@ class SafariSettingsViewController: UIViewController {
         self.rotationAnimation.repeatCount = Float(loop)
 
         view.layer.add(self.rotationAnimation, forKey: "rotationAnimation")
+    }
+
+    func initStep3Label() {
+        let normalStyle = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)
+        ]
+        let heavierStyle = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .bold)
+        ]
+
+
+        let baseText = "Tap "
+        let attributedString = NSMutableAttributedString(
+            string: baseText,
+            attributes: normalStyle
+        )
+
+        var settingsText = "Content Blockers"
+        if #available(iOS 15.0, *) {
+            settingsText = "Extensions"
+        }
+        let settingsString = NSMutableAttributedString(
+            string: settingsText,
+            attributes: heavierStyle
+        )
+
+        let punctuationText = "."
+        let punctuationString = NSMutableAttributedString(
+            string: punctuationText,
+            attributes: normalStyle
+        )
+
+        attributedString.append(settingsString)
+        attributedString.append(punctuationString)
+
+        self.step3Label.attributedText = attributedString
     }
 
     @objc func returnToForeground(_ notification: Notification)
