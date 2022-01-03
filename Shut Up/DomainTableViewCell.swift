@@ -3,7 +3,7 @@
 //  Shut Up
 //
 //  Created by Ricky Romero on 9/13/15.
-//  Copyright © 2015 Ricky Romero. All rights reserved.
+//  See LICENSE.md for license information.
 //
 
 import UIKit

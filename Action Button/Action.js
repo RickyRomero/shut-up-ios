@@ -3,7 +3,7 @@
 //  Action Button
 //
 //  Created by Ricky Romero on 6/28/15.
-//  Copyright © 2015 Ricky Romero. All rights reserved.
+//  See LICENSE.md for license information.
 //
 
 var Action = function() {};
